@@ -10,6 +10,10 @@
 		7B8B2B23193E417300A5ABD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B22193E417300A5ABD3 /* AppDelegate.swift */; };
 		7B8B2B25193E417300A5ABD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8B2B24193E417300A5ABD3 /* Images.xcassets */; };
 		7B8B2B31193E417300A5ABD3 /* ColorTouch_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B30193E417300A5ABD3 /* ColorTouch_SwiftTests.swift */; };
+		7B8B2B3B193E422500A5ABD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */; };
+		7B8B2B3C193E422500A5ABD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */; };
+		7B8B2B3E193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
+		7B8B2B3F193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,8 @@
 		7B8B2B2A193E417300A5ABD3 /* ColorTouch_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorTouch_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8B2B2F193E417300A5ABD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8B2B30193E417300A5ABD3 /* ColorTouch_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTouch_SwiftTests.swift; sourceTree = "<group>"; };
+		7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENMCircle.swift; path = ../../ENMCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8B2B1F193E417200A5ABD3 /* ColorTouch_Swift */,
+				7B8B2B20193E417300A5ABD3 /* Supporting Files */,
 				7B8B2B2D193E417300A5ABD3 /* ColorTouch_SwiftTests */,
 				7B8B2B1E193E417200A5ABD3 /* Products */,
 			);
@@ -72,8 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				7B8B2B22193E417300A5ABD3 /* AppDelegate.swift */,
-				7B8B2B24193E417300A5ABD3 /* Images.xcassets */,
-				7B8B2B20193E417300A5ABD3 /* Supporting Files */,
+				7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */,
+				7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */,
 			);
 			path = ColorTouch_Swift;
 			sourceTree = "<group>";
@@ -81,9 +88,11 @@
 		7B8B2B20193E417300A5ABD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B8B2B24193E417300A5ABD3 /* Images.xcassets */,
 				7B8B2B21193E417300A5ABD3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = ColorTouch_Swift;
 			sourceTree = "<group>";
 		};
 		7B8B2B2D193E417300A5ABD3 /* ColorTouch_SwiftTests */ = {
@@ -200,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8B2B3E193E437F00A5ABD3 /* ENMCircle.swift in Sources */,
 				7B8B2B23193E417300A5ABD3 /* AppDelegate.swift in Sources */,
+				7B8B2B3B193E422500A5ABD3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8B2B3F193E437F00A5ABD3 /* ENMCircle.swift in Sources */,
 				7B8B2B31193E417300A5ABD3 /* ColorTouch_SwiftTests.swift in Sources */,
+				7B8B2B3C193E422500A5ABD3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
