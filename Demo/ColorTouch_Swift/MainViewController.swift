@@ -10,7 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let gradientCircle: ENMCircle = ENMCircle(red: 1.0, green: 0.0, blue: 0.0)
+    let gradientCircle: ENMCircle = ENMCircle(size: CGSizeMake(60.0, 60.0),
+                                          redValue: 1.0,
+                                        greenValue: 0.0,
+                                         blueValue: 0.0)
     
     override func loadView() {
         let myView = UIView(frame: UIScreen.mainScreen().bounds)

@@ -10,23 +10,23 @@ import UIKit
 import QuartzCore
 
 class ENMCircle: UIView {
-
-    init(red: CGFloat, green: CGFloat, blue: CGFloat) {
-        super.init(frame: initialFrame())
-        layer.contents = generateRadialWithRed(red, green: green, blue: blue).CGImage
+    
+    init(size: CGSize, redValue: Double, greenValue: Double, blueValue: Double) {
+        super.init(frame: CGRectMake(0.0, 0.0, size.width, size.height))
+        layer.contents = generateRadialWithRed(redValue, green: greenValue, blue: blueValue).CGImage
     }
     
-    @final func generateRadialWithRed(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIImage {
+    func generateRadialWithRed(red: Double, green: Double, blue: Double) -> UIImage {
         var gradient: CGGradientRef?
         var colorSpace: CGColorSpaceRef?
         var numberOfLocation: size_t = 6
-        let locations: CGFloat[] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-        let components: CGFloat[] = [0.0,   0.0,    0.0,    1.0,
-                                     red,   green,  blue,   1.0,
-                                     red,   green,  blue,   0.8,
-                                     red,   green,  blue,   0.6,
-                                     red,   green,  blue,   0.2,
-                                     red,   green,  blue,   0.0]
+        let locations: Double[] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+        let components: Double[] = [0.0,   0.0,    0.0,    1.0,
+                                    red,   green,  blue,   1.0,
+                                    red,   green,  blue,   0.8,
+                                    red,   green,  blue,   0.6,
+                                    red,   green,  blue,   0.2,
+                                    red,   green,  blue,   0.0]
         
         colorSpace = CGColorSpaceCreateDeviceRGB()
         gradient = CGGradientCreateWithColorComponents(colorSpace,
@@ -62,11 +62,13 @@ class ENMCircle: UIView {
         fadeIn.toValue = 1.0
         fadeIn.duration = duration
         
-        layer.addAnimation(fadeIn, forKey: "face")
+        layer.addAnimation(fadeIn, forKey: "fade")
     }
     
     func fadeOutWithDuration(duration: CFTimeInterval) {
         let fadeOut: CABasicAnimation = CABasicAnimation()
+        fadeOut.keyPath = "opacity"
+        fadeOut.delegate = self
         fadeOut.fromValue = 1.0
         fadeOut.toValue = 0.0
         fadeOut.duration = duration
@@ -74,13 +76,6 @@ class ENMCircle: UIView {
         fadeOut.removedOnCompletion = false
         
         layer.addAnimation(fadeOut, forKey: "fade")
-    }
-    
-
-// MARK: - Helpers
-    
-    @final func initialFrame() -> CGRect {
-        return CGRectMake(0.0, 0.0, 60.0, 60.0)
     }
 
 }
