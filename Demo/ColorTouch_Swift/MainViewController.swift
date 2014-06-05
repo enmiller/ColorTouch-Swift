@@ -11,9 +11,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     let gradientCircle: ENMCircle = ENMCircle(size: CGSizeMake(60.0, 60.0),
-                                          redValue: 1.0,
-                                        greenValue: 0.0,
-                                         blueValue: 0.0)
+                                          redValue: 0.0,
+                                        greenValue: 1.0,
+                                         blueValue: 1.0)
     
     override func loadView() {
         let myView = UIView(frame: UIScreen.mainScreen().bounds)
@@ -25,9 +25,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         gradientCircle.fadeOutWithDuration(0.0)
     }
-    
-    
-// MARK: - Touch Overrides
+}
+
+//MARK: - Touches
+extension MainViewController {
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!)  {
         if (gradientCircle.superview == nil) {
@@ -51,5 +52,4 @@ class MainViewController: UIViewController {
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!)  {
         gradientCircle.fadeOutWithDuration(0.2)
     }
-
 }
