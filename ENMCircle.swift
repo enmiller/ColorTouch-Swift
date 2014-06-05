@@ -11,10 +11,14 @@ import QuartzCore
 
 class ENMCircle: UIView {
     
-    init(size: CGSize, redValue: Double, greenValue: Double, blueValue: Double) {
+    init(size: CGSize, redValue: Double = 1.0, greenValue: Double = 0.0, blueValue: Double = 0.0) {
         super.init(frame: CGRectMake(0.0, 0.0, size.width, size.height))
         layer.contents = generateRadialWithRed(redValue, green: greenValue, blue: blueValue).CGImage
     }
+}
+
+// MARK: - Gradients
+extension ENMCircle {
     
     func generateRadialWithRed(red: Double, green: Double, blue: Double) -> UIImage {
         var gradient: CGGradientRef?
@@ -22,17 +26,17 @@ class ENMCircle: UIView {
         var numberOfLocation: size_t = 6
         let locations: Double[] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
         let components: Double[] = [0.0,   0.0,    0.0,    1.0,
-                                    red,   green,  blue,   1.0,
-                                    red,   green,  blue,   0.8,
-                                    red,   green,  blue,   0.6,
-                                    red,   green,  blue,   0.2,
-                                    red,   green,  blue,   0.0]
+            red,   green,  blue,   1.0,
+            red,   green,  blue,   0.8,
+            red,   green,  blue,   0.6,
+            red,   green,  blue,   0.2,
+            red,   green,  blue,   0.0]
         
         colorSpace = CGColorSpaceCreateDeviceRGB()
         gradient = CGGradientCreateWithColorComponents(colorSpace,
-                                                       components,
-                                                       locations,
-                                                       numberOfLocation)
+            components,
+            locations,
+            numberOfLocation)
         
         var startPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
         var endPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
@@ -40,20 +44,21 @@ class ENMCircle: UIView {
         UIGraphicsBeginImageContext(frame.size)
         let imageContext: CGContextRef = UIGraphicsGetCurrentContext()
         CGContextDrawRadialGradient(imageContext,
-                                    gradient,
-                                    startPoint,
-                                    0.0,
-                                    endPoint,
-                                    frame.size.width/2,
-                                    0)
+            gradient,
+            startPoint,
+            0.0,
+            endPoint,
+            frame.size.width/2,
+            0)
         let resultImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return resultImage
     }
-    
-    
-// MARK: - Animation
+}
+
+// MARK: - Animations
+extension ENMCircle {
     
     func fadeInWithDuration(duration: CFTimeInterval) {
         let fadeIn: CABasicAnimation = CABasicAnimation()
@@ -77,5 +82,5 @@ class ENMCircle: UIView {
         
         layer.addAnimation(fadeOut, forKey: "fade")
     }
-
+    
 }
