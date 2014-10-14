@@ -3,7 +3,7 @@
 //  ColorTouch_Swift
 //
 //  Created by Eric Miller on 6/3/14.
-//  Copyright (c) 2014 Yogurt Salad. All rights reserved.
+//  Copyright (c) 2014 Xero. All rights reserved.
 //
 
 import UIKit
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
 //MARK: - Touches
 extension MainViewController {
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!)  {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)  {
         if (gradientCircle.superview == nil) {
             view.addSubview(gradientCircle)
         }
@@ -43,13 +43,13 @@ extension MainViewController {
         gradientCircle.fadeInWithDuration(0.2)
     }
     
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!)  {
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent)  {
         let touch: UITouch = touches.anyObject() as UITouch
         let touchPoint: CGPoint = touch.locationInView(view)
         gradientCircle.center = touchPoint
     }
     
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!)  {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent)  {
         gradientCircle.fadeOutWithDuration(0.2)
     }
 }
