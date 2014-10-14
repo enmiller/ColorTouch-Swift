@@ -3,7 +3,7 @@
 //  ColorTouch_Swift
 //
 //  Created by Eric Miller on 6/3/14.
-//  Copyright (c) 2014 Yogurt Salad. All rights reserved.
+//  Copyright (c) 2014 Xero. All rights reserved.
 //
 
 import UIKit
@@ -11,9 +11,13 @@ import QuartzCore
 
 class ENMCircle: UIView {
     
-    init(size: CGSize, redValue: CGFloat = 1.0, greenValue: CGFloat = 0.0, blueValue: CGFloat = 0.0) {
+    init(size: CGSize!, redValue: CGFloat = 1.0, greenValue: CGFloat = 0.0, blueValue: CGFloat = 0.0) {
         super.init(frame: CGRectMake(0.0, 0.0, size.width, size.height))
         layer.contents = generateRadialWithRed(redValue, green: greenValue, blue: blueValue).CGImage
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -24,8 +28,8 @@ extension ENMCircle {
         var gradient: CGGradientRef?
         var colorSpace: CGColorSpaceRef?
         var numberOfLocation: size_t = 6
-        let locations: CGFloat[] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
-        let components: CGFloat[] = [0.0,  0.0,    0.0,    1.0,
+        let locations: [CGFloat] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+        let components: [CGFloat] = [0.0,  0.0,    0.0,    1.0,
                                     red,   green,  blue,   1.0,
                                     red,   green,  blue,   0.8,
                                     red,   green,  blue,   0.6,
