@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
     var rootController: MainViewController?
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         rootController = MainViewController(nibName: nil, bundle: nil)

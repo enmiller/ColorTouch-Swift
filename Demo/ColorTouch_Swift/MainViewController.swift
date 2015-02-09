@@ -30,12 +30,12 @@ class MainViewController: UIViewController {
 //MARK: - Touches
 extension MainViewController {
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)  {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         if (gradientCircle.superview == nil) {
             view.addSubview(gradientCircle)
         }
         
-        let touch: UITouch = touches.anyObject() as UITouch
+        let touch: UITouch = touches.first as! UITouch
         let touchPoint: CGPoint = touch.locationInView(view)
         
         gradientCircle.center = touchPoint
@@ -43,13 +43,13 @@ extension MainViewController {
         gradientCircle.fadeInWithDuration(0.2)
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent)  {
-        let touch: UITouch = touches.anyObject() as UITouch
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch: UITouch = touches.first as! UITouch
         let touchPoint: CGPoint = touch.locationInView(view)
         gradientCircle.center = touchPoint
     }
-    
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent)  {
+
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         gradientCircle.fadeOutWithDuration(0.2)
     }
 }
