@@ -5,3 +5,6 @@
 ###Usage:
 * Drop in ENMCircle.swift into your project
 * Enjoy colored touches
+
+###Notes:
+* Compiled for Swift 1.2 
