@@ -8,3 +8,4 @@
 
 ###Notes:
 * Compiled for Swift 1.2 
+* The 'swift2' branch is updated using Swift 2 and Xcode 7
