@@ -8,3 +8,4 @@
 
 ###Notes:
 * Compiled for Swift 1.2 
+* The 'swift2' branch is built using Swift 2 running on iOS 9 and Xcode 7
