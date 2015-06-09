@@ -27,7 +27,7 @@ extension ENMCircle {
     func generateRadialWithRed(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIImage {
         var gradient: CGGradientRef?
         var colorSpace: CGColorSpaceRef?
-        var numberOfLocation: size_t = 6
+        let numberOfLocation: size_t = 6
         let locations: [CGFloat] = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
         let components: [CGFloat] = [0.0,  0.0,    0.0,    1.0,
                                     red,   green,  blue,   1.0,
@@ -42,8 +42,8 @@ extension ENMCircle {
                                                        locations,
                                                        numberOfLocation)
         
-        var startPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
-        var endPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
+        let startPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
+        let endPoint: CGPoint = CGPointMake(frame.size.width/2, frame.size.height/2)
         
         UIGraphicsBeginImageContext(frame.size)
         let imageContext: CGContextRef = UIGraphicsGetCurrentContext()
