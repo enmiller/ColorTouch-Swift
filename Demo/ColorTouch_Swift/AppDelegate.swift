@@ -15,12 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rootController: MainViewController?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         rootController = MainViewController(nibName: nil, bundle: nil)
-        self.window!.rootViewController = rootController!
-        self.window!.backgroundColor = UIColor.whiteColor()
-        self.window!.makeKeyAndVisible()
+        window!.rootViewController = rootController!
+        window!.makeKeyAndVisible()
         return true
     }
 }

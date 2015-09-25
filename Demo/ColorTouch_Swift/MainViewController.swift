@@ -10,46 +10,60 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let gradientCircle: ENMCircle = ENMCircle(size: CGSizeMake(60.0, 60.0),
-                                          redValue: 0.0,
-                                        greenValue: 1.0,
-                                         blueValue: 1.0)
+    var gradientCircle: ENMCircle?
     
-    override func loadView() {
-        let myView = UIView(frame: UIScreen.mainScreen().bounds)
-        myView.backgroundColor = UIColor.darkGrayColor()
-        view = myView
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        commonInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        gradientCircle = ENMCircle(
+            size: CGSizeMake(60.0, 60.0),
+            redValue: 0.0,
+            greenValue: 1.0,
+            blueValue: 1.0
+        )
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gradientCircle.fadeOutWithDuration(0.0)
+        view.backgroundColor = UIColor.lightGrayColor()
+        gradientCircle?.fadeOutWithDuration(0.0)
     }
 }
 
 //MARK: - Touches
 extension MainViewController {
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if (gradientCircle.superview == nil) {
-            view.addSubview(gradientCircle)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let unwrappedGradient = gradientCircle {
+            if (unwrappedGradient.superview == nil) {
+                view.addSubview(unwrappedGradient)
+            }
         }
         
-        let touch: UITouch = touches.first as! UITouch
-        let touchPoint: CGPoint = touch.locationInView(view)
-        
-        gradientCircle.center = touchPoint
-        
-        gradientCircle.fadeInWithDuration(0.2)
+        if let touch = touches.first {
+            let touchPoint: CGPoint = touch.locationInView(view)
+            gradientCircle?.center = touchPoint
+            
+            gradientCircle?.fadeInWithDuration(0.2)
+        }
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch: UITouch = touches.first as! UITouch
-        let touchPoint: CGPoint = touch.locationInView(view)
-        gradientCircle.center = touchPoint
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            let touchPoint: CGPoint = touch.locationInView(view)
+            gradientCircle?.center = touchPoint
+        }
     }
 
-    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        gradientCircle.fadeOutWithDuration(0.2)
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        gradientCircle?.fadeOutWithDuration(0.2)
     }
 }
