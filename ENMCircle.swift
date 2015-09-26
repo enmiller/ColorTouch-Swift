@@ -11,6 +11,10 @@ import QuartzCore
 
 class ENMCircle: UIView {
     
+    var smallestSizeDimension: CGFloat = 60.0
+    var largestSizeDimension: CGFloat = 200.0
+    var supportsForceTouch: Bool = false
+    
     init?(size: CGSize!, redValue: CGFloat = 1.0, greenValue: CGFloat = 0.0, blueValue: CGFloat = 0.0) {
         super.init(frame: CGRectMake(0.0, 0.0, size.width, size.height))
         
@@ -25,8 +29,50 @@ class ENMCircle: UIView {
     }
 }
 
-// MARK: - Gradients
+// MARK: - Public Methods
 extension ENMCircle {
+    func updateSizeForForce(force: CGFloat) {
+        if supportsForceTouch {
+            var sizeDimension = smallestSizeDimension * force
+            if sizeDimension > largestSizeDimension {
+                sizeDimension = largestSizeDimension
+            } else if sizeDimension < smallestSizeDimension {
+                sizeDimension = smallestSizeDimension
+            }
+            self.frame.size = CGSizeMake(sizeDimension, sizeDimension)
+        }
+    }
+}
+
+// MARK: - Animations
+extension ENMCircle {
+    
+    func fadeInWithDuration(duration: CFTimeInterval) {
+        let fadeIn: CABasicAnimation = CABasicAnimation()
+        fadeIn.keyPath = "opacity"
+        fadeIn.fromValue = 0.0
+        fadeIn.toValue = 1.0
+        fadeIn.duration = duration
+        
+        layer.addAnimation(fadeIn, forKey: "fade")
+    }
+    
+    func fadeOutWithDuration(duration: CFTimeInterval) {
+        let fadeOut: CABasicAnimation = CABasicAnimation()
+        fadeOut.keyPath = "opacity"
+        fadeOut.delegate = self
+        fadeOut.fromValue = 1.0
+        fadeOut.toValue = 0.0
+        fadeOut.duration = duration
+        fadeOut.fillMode = kCAFillModeForwards
+        fadeOut.removedOnCompletion = false
+        
+        layer.addAnimation(fadeOut, forKey: "fade")
+    }
+}
+
+// MARK: - Gradients (Private)
+private extension ENMCircle {
     
     func generateRadialWithRed(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIImage? {
         var gradient: CGGradientRef?
@@ -66,32 +112,5 @@ extension ENMCircle {
         let resultImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resultImage
-    }
-}
-
-// MARK: - Animations
-extension ENMCircle {
-    
-    func fadeInWithDuration(duration: CFTimeInterval) {
-        let fadeIn: CABasicAnimation = CABasicAnimation()
-        fadeIn.keyPath = "opacity"
-        fadeIn.fromValue = 0.0
-        fadeIn.toValue = 1.0
-        fadeIn.duration = duration
-        
-        layer.addAnimation(fadeIn, forKey: "fade")
-    }
-    
-    func fadeOutWithDuration(duration: CFTimeInterval) {
-        let fadeOut: CABasicAnimation = CABasicAnimation()
-        fadeOut.keyPath = "opacity"
-        fadeOut.delegate = self
-        fadeOut.fromValue = 1.0
-        fadeOut.toValue = 0.0
-        fadeOut.duration = duration
-        fadeOut.fillMode = kCAFillModeForwards
-        fadeOut.removedOnCompletion = false
-        
-        layer.addAnimation(fadeOut, forKey: "fade")
     }
 }

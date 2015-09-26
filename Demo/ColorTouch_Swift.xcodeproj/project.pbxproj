@@ -14,6 +14,7 @@
 		7B8B2B3C193E422500A5ABD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */; };
 		7B8B2B3E193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
 		7B8B2B3F193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
+		7BC055C01BB616720028529E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC055BF1BB616720028529E /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7B8B2B30193E417300A5ABD3 /* ColorTouch_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTouch_SwiftTests.swift; sourceTree = "<group>"; };
 		7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENMCircle.swift; path = ../../ENMCircle.swift; sourceTree = "<group>"; };
+		7BC055BF1BB616720028529E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				7B8B2B24193E417300A5ABD3 /* Images.xcassets */,
 				7B8B2B21193E417300A5ABD3 /* Info.plist */,
+				7BC055BF1BB616720028529E /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			path = ColorTouch_Swift;
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8B2B25193E417300A5ABD3 /* Images.xcassets in Resources */,
+				7BC055C01BB616720028529E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -308,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -319,7 +323,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ColorTouch_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -332,7 +335,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ColorTouch_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

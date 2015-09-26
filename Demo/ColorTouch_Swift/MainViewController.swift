@@ -36,6 +36,12 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor.lightGrayColor()
         gradientCircle?.fadeOutWithDuration(0.0)
     }
+    
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
+            gradientCircle?.supportsForceTouch = true
+        }
+    }
 }
 
 //MARK: - Touches
@@ -60,6 +66,8 @@ extension MainViewController {
         if let touch = touches.first {
             let touchPoint: CGPoint = touch.locationInView(view)
             gradientCircle?.center = touchPoint
+            
+            gradientCircle?.updateSizeForForce(touch.force)
         }
     }
 
