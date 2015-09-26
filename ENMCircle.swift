@@ -11,8 +11,19 @@ import QuartzCore
 
 class ENMCircle: UIView {
     
+    ///
+    /// The smallest size the gradient circle will shrink to when supporting force touch.
+    ///
     var smallestSizeDimension: CGFloat = 60.0
+    
+    ///
+    /// The largest size the gradient circle will grow to when supporting force touch.
+    ///
     var largestSizeDimension: CGFloat = 200.0
+    
+    ///
+    /// Notifies the gradient circle that force touch is supported by the current UITraitCollection.
+    ///
     var supportsForceTouch: Bool = false
     
     init?(size: CGSize!, redValue: CGFloat = 1.0, greenValue: CGFloat = 0.0, blueValue: CGFloat = 0.0) {
@@ -31,6 +42,11 @@ class ENMCircle: UIView {
 
 // MARK: - Public Methods
 extension ENMCircle {
+    ///
+    /// Call this to update the size of the gradient circle based on the force being applied.
+    /// The gradient circle will grow or shrink to the minimum and maximum boundaries set by the 
+    /// ```smallestSizeDimension``` and ```largestSizeDimension```
+    ///
     func updateSizeForForce(force: CGFloat) {
         if supportsForceTouch {
             var sizeDimension = smallestSizeDimension * force
@@ -47,6 +63,9 @@ extension ENMCircle {
 // MARK: - Animations
 extension ENMCircle {
     
+    ///
+    /// Fades the gradient circle into view over the specified duration
+    ///
     func fadeInWithDuration(duration: CFTimeInterval) {
         let fadeIn: CABasicAnimation = CABasicAnimation()
         fadeIn.keyPath = "opacity"
@@ -57,6 +76,9 @@ extension ENMCircle {
         layer.addAnimation(fadeIn, forKey: "fade")
     }
     
+    ///
+    /// Fades the gradient circle out of view over the specified duration
+    ///
     func fadeOutWithDuration(duration: CFTimeInterval) {
         let fadeOut: CABasicAnimation = CABasicAnimation()
         fadeOut.keyPath = "opacity"
