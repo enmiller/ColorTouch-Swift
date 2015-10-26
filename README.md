@@ -9,4 +9,4 @@ ENMCircle now supports Force Touch!  Simply set the ```supportsForceTouch``` pro
 * Enjoy colored touches
 
 ###Notes:
-* Compiled for Swift 2
+* Compiled for Swift 2.1
