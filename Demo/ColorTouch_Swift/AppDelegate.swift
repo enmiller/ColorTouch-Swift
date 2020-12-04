@@ -3,7 +3,7 @@
 //  ColorTouch_Swift
 //
 //  Created by Eric Miller on 6/3/14.
-//  Copyright (c) 2014 Xero. All rights reserved.
+//  Copyright (c) 2014 Tiny Zepplin. All rights reserved.
 //
 
 import UIKit
@@ -14,12 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var rootController: MainViewController?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        rootController = MainViewController(nibName: nil, bundle: nil)
-        window!.rootViewController = rootController!
-        window!.makeKeyAndVisible()
+    private func application(application: UIApplication,
+                             didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         return true
     }
 }

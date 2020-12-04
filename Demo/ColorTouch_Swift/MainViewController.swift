@@ -3,16 +3,16 @@
 //  ColorTouch_Swift
 //
 //  Created by Eric Miller on 6/3/14.
-//  Copyright (c) 2014 Xero. All rights reserved.
+//  Copyright (c) 2014 Tiny Zepplin. All rights reserved.
 //
 
 import UIKit
 
 class MainViewController: UIViewController {
     
-    var gradientCircle: ENMCircle?
+    var gradientCircle: TouchCircle?
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
@@ -23,8 +23,8 @@ class MainViewController: UIViewController {
     }
     
     func commonInit() {
-        gradientCircle = ENMCircle(
-            size: CGSizeMake(60.0, 60.0),
+        gradientCircle = TouchCircle(
+            size: CGSize(width: 60.0, height: 60.0),
             redValue: 0.0,
             greenValue: 1.0,
             blueValue: 1.0
@@ -33,12 +33,11 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.lightGrayColor()
-        gradientCircle?.fadeOutWithDuration(0.0)
+        gradientCircle?.fadeOutWithDuration(duration: 0.0)
     }
     
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        if traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
             gradientCircle?.supportsForceTouch = true
         }
     }
@@ -47,7 +46,7 @@ class MainViewController: UIViewController {
 //MARK: - Touches
 extension MainViewController {
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let unwrappedGradient = gradientCircle {
             if (unwrappedGradient.superview == nil) {
                 view.addSubview(unwrappedGradient)
@@ -55,23 +54,23 @@ extension MainViewController {
         }
         
         if let touch = touches.first {
-            let touchPoint: CGPoint = touch.locationInView(view)
+            let touchPoint: CGPoint = touch.location(in: view)
             gradientCircle?.center = touchPoint
             
-            gradientCircle?.fadeInWithDuration(0.2)
+            gradientCircle?.fadeInWithDuration(duration: 0.2)
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            let touchPoint: CGPoint = touch.locationInView(view)
+            let touchPoint: CGPoint = touch.location(in: view)
             gradientCircle?.center = touchPoint
             
-            gradientCircle?.updateSizeForForce(touch.force)
+            gradientCircle?.updateSizeForForce(force: touch.force)
         }
     }
-
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        gradientCircle?.fadeOutWithDuration(0.2)
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        gradientCircle?.fadeOutWithDuration(duration: 0.2)
     }
 }

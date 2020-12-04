@@ -1,12 +1,10 @@
-#ColorTouch - Swift
-####A simple class that adds a colorful glow around a touch...now in Swift!
+# ColorTouch
+#### A simple class that adds a colorful glow around a touch
 ----  
 
-ENMCircle now supports Force Touch!  Simply set the ```supportsForceTouch``` property and watch the gradient circle grow and shrink with your force touches.
-
-###Usage:
-* Drop in ENMCircle.swift into your project
+### Usage:
+* Drop in CircleTouch.swift into your project
 * Enjoy colored touches
 
-###Notes:
-* Compiled for Swift 2.1
+### Notes:
+* Compiled for Swift 5.x

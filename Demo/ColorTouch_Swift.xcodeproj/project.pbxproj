@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3FF529257A8264001D4AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C3FF528257A8264001D4AEA /* Main.storyboard */; };
 		7B8B2B23193E417300A5ABD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B22193E417300A5ABD3 /* AppDelegate.swift */; };
 		7B8B2B25193E417300A5ABD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8B2B24193E417300A5ABD3 /* Images.xcassets */; };
 		7B8B2B31193E417300A5ABD3 /* ColorTouch_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B30193E417300A5ABD3 /* ColorTouch_SwiftTests.swift */; };
 		7B8B2B3B193E422500A5ABD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */; };
 		7B8B2B3C193E422500A5ABD3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */; };
-		7B8B2B3E193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
-		7B8B2B3F193E437F00A5ABD3 /* ENMCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */; };
-		7BC055C01BB616720028529E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC055BF1BB616720028529E /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		7B8B2B3E193E437F00A5ABD3 /* TouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* TouchCircle.swift */; };
+		7B8B2B3F193E437F00A5ABD3 /* TouchCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8B2B3D193E437F00A5ABD3 /* TouchCircle.swift */; };
+		7BC055C01BB616720028529E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC055BF1BB616720028529E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C3FF528257A8264001D4AEA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7B8B2B1D193E417200A5ABD3 /* ColorTouch_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTouch_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8B2B21193E417300A5ABD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8B2B22193E417300A5ABD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		7B8B2B2F193E417300A5ABD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B8B2B30193E417300A5ABD3 /* ColorTouch_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTouch_SwiftTests.swift; sourceTree = "<group>"; };
 		7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENMCircle.swift; path = ../../ENMCircle.swift; sourceTree = "<group>"; };
+		7B8B2B3D193E437F00A5ABD3 /* TouchCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchCircle.swift; path = ../../TouchCircle.swift; sourceTree = "<group>"; };
 		7BC055BF1BB616720028529E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +84,7 @@
 			children = (
 				7B8B2B22193E417300A5ABD3 /* AppDelegate.swift */,
 				7B8B2B3A193E422500A5ABD3 /* MainViewController.swift */,
-				7B8B2B3D193E437F00A5ABD3 /* ENMCircle.swift */,
+				7B8B2B3D193E437F00A5ABD3 /* TouchCircle.swift */,
 			);
 			path = ColorTouch_Swift;
 			sourceTree = "<group>";
@@ -93,6 +95,7 @@
 				7B8B2B24193E417300A5ABD3 /* Images.xcassets */,
 				7B8B2B21193E417300A5ABD3 /* Info.plist */,
 				7BC055BF1BB616720028529E /* LaunchScreen.storyboard */,
+				3C3FF528257A8264001D4AEA /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			path = ColorTouch_Swift;
@@ -177,6 +180,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7B8B2B14193E417200A5ABD3;
@@ -195,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3FF529257A8264001D4AEA /* Main.storyboard in Resources */,
 				7B8B2B25193E417300A5ABD3 /* Images.xcassets in Resources */,
 				7BC055C01BB616720028529E /* LaunchScreen.storyboard in Resources */,
 			);
@@ -214,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8B2B3E193E437F00A5ABD3 /* ENMCircle.swift in Sources */,
+				7B8B2B3E193E437F00A5ABD3 /* TouchCircle.swift in Sources */,
 				7B8B2B23193E417300A5ABD3 /* AppDelegate.swift in Sources */,
 				7B8B2B3B193E422500A5ABD3 /* MainViewController.swift in Sources */,
 			);
@@ -224,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8B2B3F193E437F00A5ABD3 /* ENMCircle.swift in Sources */,
+				7B8B2B3F193E437F00A5ABD3 /* TouchCircle.swift in Sources */,
 				7B8B2B31193E417300A5ABD3 /* ColorTouch_SwiftTests.swift in Sources */,
 				7B8B2B3C193E422500A5ABD3 /* MainViewController.swift in Sources */,
 			);
@@ -276,11 +281,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -312,9 +318,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -324,9 +331,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ColorTouch_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yogurtsalad.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyzepplin.ColorTouch-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -336,9 +343,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ColorTouch_Swift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yogurtsalad.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tinyzepplin.ColorTouch-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
